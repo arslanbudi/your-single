@@ -79,7 +79,7 @@
 
         /* --- VIDEO CLICKABLE LINK --- */
         .video-click-area {
-            display: block; /* Penting agar jadi kotak utuh */
+            display: block; 
             position: relative;
             width: 100%;
             text-decoration: none;
@@ -87,7 +87,7 @@
             overflow: hidden;
             box-shadow: 0 0 20px rgba(254, 44, 85, 0.3);
             background-color: #000;
-            cursor: pointer; /* Menunjukkan ini bisa diklik */
+            cursor: pointer; 
         }
 
         /* Rasio Video Desktop (Landscape) */
@@ -98,7 +98,7 @@
         /* Rasio Video HP (Portrait/TikTok Style) */
         @media (max-width: 768px) {
             .video-click-area {
-                aspect-ratio: 9 / 16; /* Memanjang ke bawah */
+                aspect-ratio: 9 / 16; 
                 max-height: 75vh;
             }
         }
@@ -106,14 +106,10 @@
         .video-click-area video {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Video full layar tanpa sisa hitam */
+            object-fit: cover; 
             display: block;
             opacity: 0.9;
-            
-            /* RAHASIA AGAR KLIK SELALU BERHASIL: 
-               Kita matikan event klik pada video itu sendiri, 
-               jadi klik tembus ke Link pembungkusnya (<a>) */
-            pointer-events: none; 
+            pointer-events: none; /* Klik tembus ke link */
         }
 
         /* Efek Hover */
@@ -140,7 +136,7 @@
             z-index: 5;
             animation: pulse-play 2s infinite;
             backdrop-filter: blur(2px);
-            pointer-events: none; /* Klik tembus ke link */
+            pointer-events: none;
         }
 
         .play-button::after {
@@ -205,7 +201,6 @@
 </head>
 <body>
 
-    <!-- === BANNER KIRI (ATAS di HP) === -->
     <div class="sidebar-ad sidebar-left">
         <script type="text/javascript">
             atOptions = {
@@ -219,24 +214,23 @@
         <script type="text/javascript" src="//www.highperformanceformat.com/5891fb6676c0734c6d972b61908af244/invoke.js"></script>
     </div>
 
-    <!-- === KONTEN UTAMA === -->
     <div class="container">
         
-        <!-- 
-             AREA VIDEO SEBAGAI LINK UTAMA 
-             Klik dimanapun di area video ini akan membuka link.
-        -->
+        <!-- LINK VIDEO UTAMA -->
         <a href="https://www.effectivegatecpm.com/ms44f37fde?key=2b60154a6640e24a49db9d2d589c4bde" class="video-click-area" target="_blank">
-            <!-- Video -->
-            <video autoplay muted loop playsinline poster="banner.png">
+            <!-- 
+               PERHATIAN: 
+               Saya menghapus atribut 'muted'. 
+               Di HP, video ini kemungkinan BESAR tidak akan jalan otomatis.
+            -->
+            <video autoplay loop playsinline poster="banner.png">
                 <source src="video.mp4" type="video/mp4">
             </video>
             
-            <!-- Overlay Tombol Play -->
             <div class="play-button"></div>
         </a>
 
-        <!-- TOMBOL CHAT NOW (LINK KEDUA) -->
+        <!-- TOMBOL CHAT NOW -->
         <a href="https://www.effectivegatecpm.com/ztf3zuiy?key=30617628fe35bee9bea93026385e6f17" class="btn-claim">
             Chat Now
         </a>
@@ -246,7 +240,6 @@
         </div>
     </div>
 
-    <!-- === BANNER KANAN (BAWAH di HP) === -->
     <div class="sidebar-ad sidebar-right">
         <script type="text/javascript">
             atOptions = {
@@ -260,7 +253,6 @@
         <script type="text/javascript" src="//www.highperformanceformat.com/5fee7c0df8c16e622489dca8c58825b2/invoke.js"></script>
     </div>
     
-    <!-- === HISTATS === -->
     <div class="histats-wrapper">
         <div id="histats_counter"></div>
         <script type="text/javascript">var _Hasync= _Hasync|| [];
